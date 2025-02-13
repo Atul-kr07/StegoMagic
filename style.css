@@ -1,0 +1,242 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: peachpuff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+textarea, input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: none;
+    text-align: center;
+}
+
+button {
+    padding: 12px 24px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+/* Hide the default file input */
+#imageInput {
+    display: none;
+}
+
+/* Custom Choose Image Button */
+.custom-file-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff8c00; /* Orange */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px #c76b00, 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    user-select: none;
+}
+
+/* Mechanical Press Effect */
+.custom-file-button:active {
+    box-shadow: 0 2px #c76b00, 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+}
+
+/* Clicking Sound */
+.custom-file-button:active::after {
+    content: " ";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+    animation: clickSound 0.1s;
+}
+
+/* Keyframe for sound effect (simulated) */
+@keyframes clickSound {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#downloadBtn {
+    display: none;
+    background-color: #28a745;
+}
+
+#downloadBtn:hover {
+    background-color: #218838;
+}
+
+#imagePreview {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+#resetBtn {
+    background-color: #dc3545;
+    display: none;
+}
+
+#resetBtn:hover {
+    background-color: #c82333;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup button {
+    margin: 10px;
+    width: auto;
+}
+/* "i" Info Button Styling */
+/* "i" Info Button Styling */
+.info-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px; /* Best size for clickability */
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff8c00; /* Orange */
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px #c76b00, 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures the "i" is exactly in the center */
+}
+
+/* Mechanical Press Effect */
+.info-button:active {
+    box-shadow: 0 2px #c76b00, 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+}
+
+
+/* Mechanical Press Effect */
+.info-button:active {
+    box-shadow: 0 2px #c76b00, 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+}
+
+/* Instructions Popup */
+.instructions-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.instructions-popup button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #ff8c00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.instructions-popup button:hover {
+    background: #c76b00;
+}
+
+/* Social Media Buttons */
+.social-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.2), 0 8px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Mechanical Click Effect */
+.social-button:active {
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(3px);
+}
+
+/* Space Between Buttons */
+#linkedinButton {
+    left: 80px; /* Adjust this value for more or less gap */
+}
+
+/* Icon Styling */
+.social-button img {
+    width: 24px;
+    height: 24px;
+}

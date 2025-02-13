@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Steganography</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- "i" Button -->
+<button class="info-button" id="infoButton">i</button>
+
+<!-- Instructions Popup -->
+<div class="instructions-popup" id="instructionsPopup">
+    <h3>How to Use</h3>
+    <p>1️⃣ Click "Choose Image" to upload an image.</p>
+    <p>2️⃣ Select either "Encode" or "Decode".</p>
+    <p>3️⃣ If encoding, enter a message and a security key.</p>
+    <p>4️⃣ Click "Encode" and download the encoded image.</p>
+    <p>5️⃣ If decoding, upload an encoded image and enter the correct key.</p>
+    <p>6️⃣ Click "Decode" to retrieve the hidden message.</p>
+    <p>7️⃣ Click <strong>"Reset"</strong> to go back to the start and choose a new function (Encode/Decode).</p>
+    <button id="closePopup">Got it!</button>
+</div>
+
+<!-- GitHub Button -->
+<a href="https://github.com/Atul-kr07" target="_blank">
+    <button class="social-button" id="githubButton">
+        <img src="github.png" alt="GitHub">
+    </button>
+</a>
+
+<!-- LinkedIn Button -->
+<a href="https://www.linkedin.com/in/atul-kumar-tech" target="_blank">
+    <button class="social-button" id="linkedinButton">
+        <img src="linkedin.png" alt="LinkedIn">
+    </button>
+</a>
+
+
+    <div class="container">
+        <h1>Image Steganography Tool</h1>
+
+        <!-- File Selection -->
+        <label for="imageInput" class="custom-file-button">CHOOSE IMAGE</label><br><br>
+        <input type="file" id="imageInput">
+        
+
+        <!-- Image Preview -->
+        <div id="imagePreviewContainer">
+            <img id="imagePreview" style="display:none; width: 100px; height: 100px; border: 2px solid black; padding: 5px; margin-top: 10px;">
+        </div>
+
+        <!-- Function Selection Popup -->
+        <div id="functionPopup" class="popup">
+            <p>Please select a function:</p>
+            <button id="selectEncode">Encode</button>
+            <button id="selectDecode">Decode</button>
+        </div>
+
+        <!-- Message & Security Key Inputs -->
+        <textarea id="messageInput" placeholder="Enter your secret message"></textarea>
+        <input type="password" id="securityKeyInput" placeholder="Enter a security key">
+
+        <!-- Error Message (for incorrect security key) -->
+        <p id="errorMessage" style="color: red; font-weight: bold; display: none; text-align: left;"></p>
+
+        <!-- Action Buttons -->
+        <button id="encodeBtn" style="display:none;">Encode Message</button>
+        <button id="decodeBtn" style="display:none;">Decode Message</button>
+        <button id="downloadBtn" style="display:none;">Download Encoded Image</button>
+        <button id="resetBtn" style="display:none;">Reset</button>
+
+        <!-- Canvas for Processing (Hidden) -->
+        <canvas id="canvas" style="display:none;"></canvas>
+        <p id="decodedMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
